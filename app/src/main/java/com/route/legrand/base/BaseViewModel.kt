@@ -4,6 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class BaseViewModel : ViewModel() {
-    private val _loadingLiveData = MutableLiveData(false)
+    private var _loadingLiveData = MutableLiveData(false)
+
     val loadingLiveData get() = _loadingLiveData
+
+    private var _errorLiveData = MutableLiveData(false)
+    val errorLiveData get() = _loadingLiveData
 }
