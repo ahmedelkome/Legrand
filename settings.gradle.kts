@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Legrand"
 include(":app")
- 
+include(":data")
+include(":domain")
