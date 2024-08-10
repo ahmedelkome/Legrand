@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Legrand</string>
     <string name="choose_your_role">Choose Your Role</string>
+    <string name="please_wait">Please Wait</string>
 </resources>

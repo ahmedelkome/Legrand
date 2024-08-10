@@ -14,8 +14,8 @@ class AuthActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var biniding: ActivityAuthBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        biniding = ActivityAuthBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        biniding = ActivityAuthBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(biniding.root)
         initNavHost()

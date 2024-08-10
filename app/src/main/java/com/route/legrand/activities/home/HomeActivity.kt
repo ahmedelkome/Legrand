@@ -12,8 +12,8 @@ import com.route.legrand.utils.ConstantsApp
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityHomeBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
         initListToAutoText()
