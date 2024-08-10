@@ -34,7 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
     }
 }
@@ -43,7 +43,12 @@ dependencies {
 
     //NavigationComponent
     implementation(libs.androidx.navigation.fragment.ktx)
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    // LiveData
+    implementation(libs.androidx.lifecycle.livedata.ktx)
 
 
     implementation(libs.androidx.core.ktx)
