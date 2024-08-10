@@ -12,9 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".home.HomeActivity">
+        tools:context=".activities.home.HomeActivity">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_role"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
