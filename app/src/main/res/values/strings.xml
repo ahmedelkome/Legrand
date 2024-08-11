@@ -4,4 +4,11 @@
     <string name="please_wait">Please Wait</string>
     <string name="please_enter_your_mail">Please Enter Your Mail</string>
     <string name="login">Login</string>
+    <string name="tool_shop">Tool Shop</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="new_project">New Project</string>
+    <string name="oee">OEE</string>
+    <string name="legrand_way">Legrand Way</string>
+    <string name="injection_data">Injection Data</string>
+    <string name="trouble_shooting">Trouble Shooting</string>
 </resources>
