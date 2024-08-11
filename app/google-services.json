@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832133075733",
+    "project_id": "legrand-9180d",
+    "storage_bucket": "legrand-9180d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832133075733:android:b0bb788fa5bca4a2090f1c",
+        "android_client_info": {
+          "package_name": "com.route.legrand"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-BOSK6sN5mIERx2QALaYBcci9jKRXV5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
