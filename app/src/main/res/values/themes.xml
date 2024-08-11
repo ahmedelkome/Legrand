@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.Legrand" parent="Base.Theme.Legrand" />
+
+
+        <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <item name="colorControlActivated">@android:color/black</item>
+        </style>
+
 </resources>

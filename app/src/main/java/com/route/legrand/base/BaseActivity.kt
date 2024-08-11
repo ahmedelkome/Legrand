@@ -52,6 +52,6 @@ abstract class BaseActivity<DB : ViewDataBinding> : AppCompatActivity() {
     }
 
     abstract fun observeLiveData()
-    
+
     abstract fun getLayout(): Int
 }

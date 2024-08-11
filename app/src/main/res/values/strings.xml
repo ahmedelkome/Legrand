@@ -2,4 +2,6 @@
     <string name="app_name">Legrand</string>
     <string name="choose_your_role">Choose Your Role</string>
     <string name="please_wait">Please Wait</string>
+    <string name="please_enter_your_mail">Please Enter Your Mail</string>
+    <string name="login">Login</string>
 </resources>

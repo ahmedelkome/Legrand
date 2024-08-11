@@ -1,22 +1,33 @@
 package com.route.legrand.activities.home
 
-import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import com.route.legrand.R
 import com.route.legrand.databinding.ActivityHomeBinding
-import com.route.legrand.activities.splash.SplashActivity
 import com.route.legrand.utils.ConstantsApp
 
 class HomeActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityHomeBinding
+    private lateinit var biniding: ActivityHomeBinding
+    lateinit var navController: NavController
+    private var roleSelected:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        biniding = ActivityHomeBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(binding.root)
+        setContentView(biniding.root)
+        initNavHost()
         initListToAutoText()
+    }
+
+    private fun initNavHost() {
+        val navHost = biniding.navHostFragmentContainer.getFragment<NavHostFragment>()
+        navController = navHost.navController
     }
 
     private fun initListToAutoText() {
@@ -25,12 +36,14 @@ class HomeActivity : AppCompatActivity() {
             android.R.layout.simple_dropdown_item_1line,
             ConstantsApp.listOfRoles
         )
-        binding.roleMenu.setAdapter(adapter)
-        binding.roleMenu.setOnItemClickListener { parent, view, position, id ->
+        biniding.roleMenu.setAdapter(adapter)
+        biniding.roleMenu.setOnItemClickListener { parent, view, position, id ->
             val selectRole = parent.getItemAtPosition(position).toString()
-            val roleSelected = ConstantsApp.listOfRoles.find { it == selectRole }
+             roleSelected = ConstantsApp.listOfRoles.find { it == selectRole }
             if (roleSelected == ConstantsApp.PRODUCTION) {
-
+                val navGraph =
+                    navController.navInflater.inflate(R.navigation.auth_production_nav_graph)
+                navController.graph = navGraph
             } else if (roleSelected == ConstantsApp.TOOLSHOP) {
 
             } else if (roleSelected == ConstantsApp.MAINTENANCE) {
