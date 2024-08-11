@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.gms.google-services")
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -32,12 +34,18 @@ android {
         jvmTarget = "1.8"
     }
 }
-
+kapt {
+    correctErrorTypes = true
+}
 dependencies {
 
     //firebase
     implementation(libs.firebase.bom)
     implementation(libs.firebase.auth)
+
+    //Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

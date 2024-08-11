@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("androidx.navigation.safeargs")
+    id ("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -38,6 +40,9 @@ android {
         dataBinding = true
     }
 }
+kapt {
+    correctErrorTypes = true
+}
 
 dependencies {
 
@@ -49,6 +54,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     // LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
+
+    //Hilt
+    implementation (libs.hilt.android)
+    kapt (libs.hilt.compiler)
 
 
     implementation(libs.androidx.core.ktx)
