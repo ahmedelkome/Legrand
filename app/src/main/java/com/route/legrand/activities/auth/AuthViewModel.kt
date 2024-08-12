@@ -1,4 +1,4 @@
-package com.route.legrand.fragments.auth
+package com.route.legrand.activities.auth
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -49,7 +49,7 @@ class AuthViewModel @Inject constructor(
 
                     is ResultWrapper.Success -> {
 
-                        event.postValue(AuthEvents.navigateToHome)
+                        event.postValue(AuthEvents.navigateToMain)
                         loadingLiveData.postValue(false)
                     }
                 }

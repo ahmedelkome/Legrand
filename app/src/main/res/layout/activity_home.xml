@@ -40,12 +40,7 @@
                 android:textColorHint="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/nav_host_fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            app:defaultNavHost="true" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

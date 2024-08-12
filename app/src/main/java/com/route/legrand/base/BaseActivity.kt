@@ -14,10 +14,10 @@ abstract class BaseActivity<DB : ViewDataBinding> : AppCompatActivity() {
 
     lateinit var binding: DB
     private var dialog: AlertDialog? = null
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        binding = DataBindingUtil.setContentView(this, getLayout())
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        binding = DataBindingUtil.setContentView(this, getLayout())
         binding.lifecycleOwner = this
 
     }
@@ -49,6 +49,8 @@ abstract class BaseActivity<DB : ViewDataBinding> : AppCompatActivity() {
             .setNegativeButton(errorMessage.negTitle) { dialog, which ->
                 errorMessage.negClick?.let { it.invoke() }
             }
+        dialogError.create()
+        dialogError.show()
     }
 
     abstract fun observeLiveData()
