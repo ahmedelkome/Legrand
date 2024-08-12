@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.route.legrand.fragments.auth.AuthViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,86 +15,91 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".activities.auth.AuthActivity">
+        tools:context=".fragments.auth.AuthFragment">
 
         <ImageView
             android:id="@+id/head_auth"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/til_email"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="30dp"
             android:src="@drawable/head_logo"
-            />
+            app:layout_constraintBottom_toTopOf="@id/til_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_email"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            error="@{vm.loginEmailLiveDataError}"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
-            app:hintTextColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="276dp"
+            android:hint="@string/please_enter_your_mail"
             app:boxStrokeColor="@color/black"
             app:errorTextColor="@color/red"
-            android:layout_marginTop="276dp"
+            app:hintTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".09"
             app:layout_constraintStart_toStartOf="parent"
-            android:hint="@string/please_enter_your_mail"
-            android:layout_marginHorizontal="20dp"
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
                 android:id="@+id/edit_mail"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:text="@={vm.loginEmailLiveData}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_pass"
+            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+            error="@{vm.loginPasswordLiveDateError}"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
-            app:hintTextColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:hint="Enter Your Password"
             app:boxStrokeColor="@color/black"
             app:errorTextColor="@color/red"
-            android:layout_marginTop="30dp"
+            app:hintTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".09"
             app:layout_constraintStart_toStartOf="parent"
-            android:hint="Enter Your Password"
-            android:layout_marginHorizontal="20dp"
             app:layout_constraintTop_toBottomOf="@id/til_email">
 
             <EditText
                 android:id="@+id/edit_pass"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:text="@={vm.loginPasswordLiveDate}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/til_pass"
-            app:layout_constraintHeight_percent=".07"
-            android:background="@color/red"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginHorizontal="40dp"
-            >
+            android:background="@color/red"
+            android:onClick="@{()->vm.login()}"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".07"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_pass">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:text="@string/login"
-                android:textSize="24sp"
                 android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

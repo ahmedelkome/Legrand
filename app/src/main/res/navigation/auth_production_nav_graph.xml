@@ -3,11 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/auth_production"
-    app:startDestination="@id/authActivity">
-
-    <activity
-        android:id="@+id/authActivity"
-        android:name="com.route.legrand.activities.auth.AuthActivity"
-        android:label="activity_auth"
-        tools:layout="@layout/activity_auth" />
+    app:startDestination="@id/authFragment">
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.route.legrand.fragments.auth.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/auth_fragment"
+        >
+        <action
+            android:id="@+id/action_authFragment_to_homeProductionFragment"
+            app:destination="@id/homeProductionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeProductionFragment"
+        android:name="com.route.legrand.fragments.production.home.HomeProductionFragment"
+        android:label="HomeProductionFragment"
+        tools:layout="@layout/home_fragment_production"
+        />
 </navigation>

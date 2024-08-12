@@ -56,6 +56,8 @@ abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
             .setNegativeButton(errorMessage.negTitle) { dialog, which ->
                 errorMessage.negClick?.let { it.invoke() }
             }
+        dialogError.create()
+        dialogError.show()
     }
 
     abstract fun observeLiveData()

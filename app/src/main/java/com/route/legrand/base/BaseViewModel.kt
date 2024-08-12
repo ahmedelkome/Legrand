@@ -2,12 +2,12 @@ package com.route.legrand.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.route.legrand.models.ErrorMessage
 
-class BaseViewModel : ViewModel() {
-    private var _loadingLiveData = MutableLiveData(false)
+open class BaseViewModel : ViewModel() {
+     var loadingLiveData = MutableLiveData(false)
 
-    val loadingLiveData get() = _loadingLiveData
 
-    private var _errorLiveData = MutableLiveData(false)
-    val errorLiveData get() = _loadingLiveData
+    var errorLiveData = MutableLiveData<ErrorMessage>()
+
 }

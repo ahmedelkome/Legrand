@@ -11,7 +11,7 @@ class AuthUseCase @Inject constructor(
 ) {
 
     suspend fun execute(userLogin: UserLogin):Flow<ResultWrapper<UserLogin>>{
-        return authRepository.login(userLogin)
+        return authRepository.login(email = userLogin.email, password = userLogin.password)
 
     }
 }

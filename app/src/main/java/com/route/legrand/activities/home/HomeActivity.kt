@@ -11,11 +11,13 @@ import androidx.navigation.fragment.NavHostFragment
 import com.route.legrand.R
 import com.route.legrand.databinding.ActivityHomeBinding
 import com.route.legrand.utils.ConstantsApp
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     private lateinit var biniding: ActivityHomeBinding
     lateinit var navController: NavController
-    private var roleSelected:String?=null
+    private var roleSelected: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         biniding = ActivityHomeBinding.inflate(layoutInflater)
@@ -39,11 +41,12 @@ class HomeActivity : AppCompatActivity() {
         biniding.roleMenu.setAdapter(adapter)
         biniding.roleMenu.setOnItemClickListener { parent, view, position, id ->
             val selectRole = parent.getItemAtPosition(position).toString()
-             roleSelected = ConstantsApp.listOfRoles.find { it == selectRole }
+            roleSelected = ConstantsApp.listOfRoles.find { it == selectRole }
             if (roleSelected == ConstantsApp.PRODUCTION) {
                 val navGraph =
                     navController.navInflater.inflate(R.navigation.auth_production_nav_graph)
                 navController.graph = navGraph
+                biniding.tilRole.isVisible = false
             } else if (roleSelected == ConstantsApp.TOOLSHOP) {
 
             } else if (roleSelected == ConstantsApp.MAINTENANCE) {

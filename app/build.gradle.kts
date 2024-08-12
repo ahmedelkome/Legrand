@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("androidx.navigation.safeargs")
     id ("com.google.dagger.hilt.android")
+    id("com.google.gms.google-services")
     id("kotlin-kapt")
 }
 
@@ -57,6 +58,7 @@ dependencies {
 
     //Hilt
     implementation (libs.hilt.android)
+    implementation(libs.firebase.common.ktx)
     kapt (libs.hilt.compiler)
 
 
