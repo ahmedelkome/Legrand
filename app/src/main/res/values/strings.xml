@@ -13,4 +13,16 @@
     <string name="trouble_shooting">Trouble Shooting</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_part_number">Choose Part Number</string>
+    <string name="part_number">Part Number</string>
+    <string name="material_used">Material Used :</string>
+    <string name="weight_of_1_pc">Weight of 1 pc :</string>
+    <string name="cycle_time">Cycle Time :</string>
+    <string name="std_cavities">STD Cavities :</string>
+    <string name="hourly_rate">Hourly Rate :</string>
+    <string name="quantity_per_quntainer">Quantity Per Quntainer :</string>
+    <string name="mold_location">Mold Location :</string>
+    <string name="rack_no">Rack no :</string>
+    <string name="get_parameter_sheet">Get Parameter Sheet</string>
+    <string name="edit_and_add">Edit and Add</string>
 </resources>

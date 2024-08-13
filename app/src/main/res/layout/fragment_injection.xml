@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,9 +10,249 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         tools:context=".fragments.production.injection.InjectionFragment">
 
 
+        <TextView
+            android:id="@+id/choose_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/choose_part_number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_part_num"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/part_number"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/choose_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/choose_text"
+            app:layout_constraintTop_toTopOf="@id/choose_text">
+
+            <AutoCompleteTextView
+                android:id="@+id/menu_part_num"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/material_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="@string/material_used"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/choose_text"
+            app:layout_constraintTop_toBottomOf="@id/choose_text" />
+
+        <EditText
+            android:id="@+id/material_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:inputType="none"
+            app:layout_constraintBottom_toBottomOf="@id/material_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/material_text"
+            app:layout_constraintTop_toTopOf="@id/material_text" />
+
+        <TextView
+            android:id="@+id/weight_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="@string/weight_of_1_pc"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/material_text"
+            app:layout_constraintStart_toStartOf="@id/material_text"
+            app:layout_constraintTop_toBottomOf="@id/material_text" />
+
+        <EditText
+            android:id="@+id/weight_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:layout_constraintBottom_toBottomOf="@id/weight_text"
+            app:layout_constraintEnd_toEndOf="@id/material_edit"
+            app:layout_constraintStart_toStartOf="@id/material_edit"
+            app:layout_constraintTop_toTopOf="@id/weight_text" />
+
+        <TextView
+            android:id="@+id/cycle_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="@string/cycle_time"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/material_text"
+            app:layout_constraintStart_toStartOf="@id/material_text"
+            app:layout_constraintTop_toBottomOf="@id/weight_text" />
+
+        <EditText
+            android:id="@+id/cycle_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:layout_constraintBottom_toBottomOf="@id/cycle_text"
+            app:layout_constraintEnd_toEndOf="@id/material_edit"
+            app:layout_constraintStart_toStartOf="@id/material_edit"
+            app:layout_constraintTop_toTopOf="@id/cycle_text" />
+
+        <TextView
+            android:id="@+id/std_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="@string/std_cavities"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/material_text"
+            app:layout_constraintStart_toStartOf="@id/material_text"
+            app:layout_constraintTop_toBottomOf="@id/cycle_text" />
+
+        <EditText
+            android:id="@+id/std_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:layout_constraintBottom_toBottomOf="@id/std_text"
+            app:layout_constraintEnd_toEndOf="@id/material_edit"
+            app:layout_constraintStart_toStartOf="@id/material_edit"
+            app:layout_constraintTop_toTopOf="@id/std_text" />
+
+        <TextView
+            android:id="@+id/hourly_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="@string/hourly_rate"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/material_text"
+            app:layout_constraintStart_toStartOf="@id/material_text"
+            app:layout_constraintTop_toBottomOf="@id/std_text" />
+
+        <EditText
+            android:id="@+id/hourly_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:layout_constraintBottom_toBottomOf="@id/hourly_text"
+            app:layout_constraintEnd_toEndOf="@id/material_edit"
+            app:layout_constraintStart_toStartOf="@id/material_edit"
+            app:layout_constraintTop_toTopOf="@id/hourly_text" />
+
+        <TextView
+            android:id="@+id/quantity_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="@string/quantity_per_quntainer"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/material_text"
+            app:layout_constraintStart_toStartOf="@id/material_text"
+            app:layout_constraintTop_toBottomOf="@id/hourly_text" />
+
+        <EditText
+            android:id="@+id/quantity_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:layout_constraintBottom_toBottomOf="@id/quantity_text"
+            app:layout_constraintEnd_toEndOf="@id/material_edit"
+            app:layout_constraintStart_toEndOf="@id/quantity_text"
+            app:layout_constraintTop_toTopOf="@id/quantity_text" />
+
+        <TextView
+            android:id="@+id/mold_location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="@string/mold_location"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/material_text"
+            app:layout_constraintStart_toStartOf="@id/material_text"
+            app:layout_constraintTop_toBottomOf="@id/quantity_text" />
+
+        <EditText
+            android:id="@+id/mold_location_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:layout_constraintBottom_toBottomOf="@id/mold_location_text"
+            app:layout_constraintEnd_toEndOf="@id/material_edit"
+            app:layout_constraintStart_toStartOf="@id/material_edit"
+            app:layout_constraintTop_toTopOf="@id/mold_location_text" />
+
+        <TextView
+            android:id="@+id/rank_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="@string/rack_no"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/material_text"
+            app:layout_constraintStart_toStartOf="@id/material_text"
+            app:layout_constraintTop_toBottomOf="@id/mold_location_text" />
+
+        <EditText
+            android:id="@+id/rand_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:layout_constraintBottom_toBottomOf="@id/rank_text"
+            app:layout_constraintEnd_toEndOf="@id/material_edit"
+            app:layout_constraintStart_toStartOf="@id/material_edit"
+            app:layout_constraintTop_toTopOf="@id/rank_text" />
+
+        <Button
+            android:id="@+id/get_parameter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="@string/get_parameter_sheet"
+            android:textSize="18sp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="@id/material_edit"
+            app:layout_constraintStart_toStartOf="@id/material_text"
+            app:layout_constraintTop_toBottomOf="@id/rank_text" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:backgroundTint="@color/red"
+            android:text="@string/edit_and_add"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/get_parameter"
+            app:layout_constraintStart_toStartOf="@id/get_parameter"
+            app:layout_constraintEnd_toEndOf="@id/get_parameter"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
