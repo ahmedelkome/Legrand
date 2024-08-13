@@ -42,10 +42,12 @@ dependencies {
     //firebase
     implementation(libs.firebase.bom)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
 
     //Hilt
     implementation(libs.hilt.android)
     implementation(libs.firebase.auth.ktx)
+    implementation (libs.firebase.firestore.ktx)
     kapt(libs.hilt.compiler)
 
     implementation(libs.androidx.core.ktx)
