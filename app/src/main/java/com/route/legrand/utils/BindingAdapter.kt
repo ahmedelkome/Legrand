@@ -7,3 +7,4 @@ import com.google.android.material.textfield.TextInputLayout
 fun BindingAdapterError(textInputLayout: TextInputLayout, error: String?) {
     textInputLayout.error = error
 }
+

@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initGraph() {
         when(sharedPreferenceHelper.getRole()){
-
             ConstantsApp.PRODUCTION ->{
                 navGraph =
                     navController.navInflater.inflate(R.navigation.production_nav_graph)

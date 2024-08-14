@@ -10,18 +10,18 @@ import javax.inject.Inject
 
 class InjectionOnlineDataSourceImpl @Inject constructor(
     private val firestore: FirebaseFirestore
-): InjectionOnlineDataSource {
+) : InjectionOnlineDataSource {
     var listOfOnInjectionData = mutableListOf<InjectionData>()
     override suspend fun getInjectionData(): List<InjectionData> {
         return safeData {
-           val query = firestore.collection(Constants.INJECTION_COLLECTION).get().await()
-            for (docs in query.documents){
+            val query = firestore.collection(Constants.INJECTION_COLLECTION).get().await()
+            for (docs in query.documents) {
                 val myData = docs.toObject(InjectionData::class.java)
-                if (myData != null){
-                    listOfOnInjectionData.add(myData)
+                myData?.let {
+                    listOfOnInjectionData.add(it)
                 }
             }
-            return@safeData listOfOnInjectionData
+            listOfOnInjectionData
         }
     }
 }

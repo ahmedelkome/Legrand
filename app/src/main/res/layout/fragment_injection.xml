@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="injection"
+            type="com.route.domain.models.injection.InjectionData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +18,7 @@
 
 
         <TextView
-            android:id="@+id/choose_text"
+            android:id="@+id/choose_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -38,10 +41,10 @@
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
             app:hintTextColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@id/choose_text"
+            app:layout_constraintBottom_toBottomOf="@id/choose_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/choose_text"
-            app:layout_constraintTop_toTopOf="@id/choose_text">
+            app:layout_constraintStart_toEndOf="@id/choose_title"
+            app:layout_constraintTop_toTopOf="@id/choose_title">
 
             <AutoCompleteTextView
                 android:id="@+id/menu_part_num"
@@ -53,15 +56,15 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/material_text"
+            android:id="@+id/material_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:padding="10dp"
             android:text="@string/material_used"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/choose_text"
-            app:layout_constraintTop_toBottomOf="@id/choose_text" />
+            app:layout_constraintStart_toStartOf="@id/choose_title"
+            app:layout_constraintTop_toBottomOf="@id/choose_title" />
 
         <EditText
             android:id="@+id/material_edit"
@@ -69,101 +72,106 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:inputType="none"
-            app:layout_constraintBottom_toBottomOf="@id/material_text"
+            android:text="@{injection.materialUsed}"
+            app:layout_constraintBottom_toBottomOf="@id/material_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/material_text"
-            app:layout_constraintTop_toTopOf="@id/material_text" />
+            app:layout_constraintStart_toEndOf="@id/material_title"
+            app:layout_constraintTop_toTopOf="@id/material_title" />
 
         <TextView
-            android:id="@+id/weight_text"
+            android:id="@+id/weight_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:padding="10dp"
             android:text="@string/weight_of_1_pc"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/material_text"
-            app:layout_constraintStart_toStartOf="@id/material_text"
-            app:layout_constraintTop_toBottomOf="@id/material_text" />
+            app:layout_constraintEnd_toEndOf="@id/material_title"
+            app:layout_constraintStart_toStartOf="@id/material_title"
+            app:layout_constraintTop_toBottomOf="@id/material_title" />
 
         <EditText
             android:id="@+id/weight_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="none"
-            app:layout_constraintBottom_toBottomOf="@id/weight_text"
+            android:text="@{injection.weight.toString()}"
+            app:layout_constraintBottom_toBottomOf="@id/weight_title"
             app:layout_constraintEnd_toEndOf="@id/material_edit"
             app:layout_constraintStart_toStartOf="@id/material_edit"
-            app:layout_constraintTop_toTopOf="@id/weight_text" />
+            app:layout_constraintTop_toTopOf="@id/weight_title" />
 
         <TextView
-            android:id="@+id/cycle_text"
+            android:id="@+id/cycle_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:padding="10dp"
             android:text="@string/cycle_time"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/material_text"
-            app:layout_constraintStart_toStartOf="@id/material_text"
-            app:layout_constraintTop_toBottomOf="@id/weight_text" />
+            app:layout_constraintEnd_toEndOf="@id/material_title"
+            app:layout_constraintStart_toStartOf="@id/material_title"
+            app:layout_constraintTop_toBottomOf="@id/weight_title" />
 
         <EditText
             android:id="@+id/cycle_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="none"
-            app:layout_constraintBottom_toBottomOf="@id/cycle_text"
+            android:text="@{injection.cycleTime.toString()}"
+            app:layout_constraintBottom_toBottomOf="@id/cycle_title"
             app:layout_constraintEnd_toEndOf="@id/material_edit"
             app:layout_constraintStart_toStartOf="@id/material_edit"
-            app:layout_constraintTop_toTopOf="@id/cycle_text" />
+            app:layout_constraintTop_toTopOf="@id/cycle_title" />
 
         <TextView
-            android:id="@+id/std_text"
+            android:id="@+id/std_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:padding="10dp"
             android:text="@string/std_cavities"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/material_text"
-            app:layout_constraintStart_toStartOf="@id/material_text"
-            app:layout_constraintTop_toBottomOf="@id/cycle_text" />
+            app:layout_constraintEnd_toEndOf="@id/material_title"
+            app:layout_constraintStart_toStartOf="@id/material_title"
+            app:layout_constraintTop_toBottomOf="@id/cycle_title" />
 
         <EditText
             android:id="@+id/std_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="none"
-            app:layout_constraintBottom_toBottomOf="@id/std_text"
+            android:text="@{injection.stdCavities.toString()}"
+            app:layout_constraintBottom_toBottomOf="@id/std_title"
             app:layout_constraintEnd_toEndOf="@id/material_edit"
             app:layout_constraintStart_toStartOf="@id/material_edit"
-            app:layout_constraintTop_toTopOf="@id/std_text" />
+            app:layout_constraintTop_toTopOf="@id/std_title" />
 
         <TextView
-            android:id="@+id/hourly_text"
+            android:id="@+id/hourly_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:padding="10dp"
             android:text="@string/hourly_rate"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/material_text"
-            app:layout_constraintStart_toStartOf="@id/material_text"
-            app:layout_constraintTop_toBottomOf="@id/std_text" />
+            app:layout_constraintEnd_toEndOf="@id/material_title"
+            app:layout_constraintStart_toStartOf="@id/material_title"
+            app:layout_constraintTop_toBottomOf="@id/std_title" />
 
         <EditText
             android:id="@+id/hourly_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="none"
-            app:layout_constraintBottom_toBottomOf="@id/hourly_text"
+            android:text="@{injection.hourlyRate.toString()}"
+            app:layout_constraintBottom_toBottomOf="@id/hourly_title"
             app:layout_constraintEnd_toEndOf="@id/material_edit"
             app:layout_constraintStart_toStartOf="@id/material_edit"
-            app:layout_constraintTop_toTopOf="@id/hourly_text" />
+            app:layout_constraintTop_toTopOf="@id/hourly_title" />
 
         <TextView
-            android:id="@+id/quantity_text"
+            android:id="@+id/quantity_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -171,75 +179,78 @@
             android:padding="10dp"
             android:text="@string/quantity_per_quntainer"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/material_text"
-            app:layout_constraintStart_toStartOf="@id/material_text"
-            app:layout_constraintTop_toBottomOf="@id/hourly_text" />
+            app:layout_constraintEnd_toEndOf="@id/material_title"
+            app:layout_constraintStart_toStartOf="@id/material_title"
+            app:layout_constraintTop_toBottomOf="@id/hourly_title" />
 
         <EditText
             android:id="@+id/quantity_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="none"
-            app:layout_constraintBottom_toBottomOf="@id/quantity_text"
+            android:text="@{injection.quantityPer.toString()}"
+            app:layout_constraintBottom_toBottomOf="@id/quantity_title"
             app:layout_constraintEnd_toEndOf="@id/material_edit"
-            app:layout_constraintStart_toEndOf="@id/quantity_text"
-            app:layout_constraintTop_toTopOf="@id/quantity_text" />
+            app:layout_constraintStart_toEndOf="@id/quantity_title"
+            app:layout_constraintTop_toTopOf="@id/quantity_title" />
 
         <TextView
-            android:id="@+id/mold_location_text"
+            android:id="@+id/mold_location_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:padding="10dp"
             android:text="@string/mold_location"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/material_text"
-            app:layout_constraintStart_toStartOf="@id/material_text"
-            app:layout_constraintTop_toBottomOf="@id/quantity_text" />
+            app:layout_constraintEnd_toEndOf="@id/material_title"
+            app:layout_constraintStart_toStartOf="@id/material_title"
+            app:layout_constraintTop_toBottomOf="@id/quantity_title" />
 
         <EditText
             android:id="@+id/mold_location_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="none"
-            app:layout_constraintBottom_toBottomOf="@id/mold_location_text"
+            android:text="@{injection.moldLocation}"
+            app:layout_constraintBottom_toBottomOf="@id/mold_location_title"
             app:layout_constraintEnd_toEndOf="@id/material_edit"
             app:layout_constraintStart_toStartOf="@id/material_edit"
-            app:layout_constraintTop_toTopOf="@id/mold_location_text" />
+            app:layout_constraintTop_toTopOf="@id/mold_location_title" />
 
         <TextView
-            android:id="@+id/rank_text"
+            android:id="@+id/rank_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:padding="10dp"
             android:text="@string/rack_no"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@id/material_text"
-            app:layout_constraintStart_toStartOf="@id/material_text"
-            app:layout_constraintTop_toBottomOf="@id/mold_location_text" />
+            app:layout_constraintEnd_toEndOf="@id/material_title"
+            app:layout_constraintStart_toStartOf="@id/material_title"
+            app:layout_constraintTop_toBottomOf="@id/mold_location_title" />
 
         <EditText
             android:id="@+id/rand_edit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="none"
-            app:layout_constraintBottom_toBottomOf="@id/rank_text"
+            android:text="@{injection.rank}"
+            app:layout_constraintBottom_toBottomOf="@id/rank_title"
             app:layout_constraintEnd_toEndOf="@id/material_edit"
             app:layout_constraintStart_toStartOf="@id/material_edit"
-            app:layout_constraintTop_toTopOf="@id/rank_text" />
+            app:layout_constraintTop_toTopOf="@id/rank_title" />
 
         <Button
             android:id="@+id/get_parameter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:backgroundTint="@color/red"
             android:text="@string/get_parameter_sheet"
             android:textSize="18sp"
-            android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="@id/material_edit"
-            app:layout_constraintStart_toStartOf="@id/material_text"
-            app:layout_constraintTop_toBottomOf="@id/rank_text" />
+            app:layout_constraintStart_toStartOf="@id/material_title"
+            app:layout_constraintTop_toBottomOf="@id/rank_title" />
 
         <Button
             android:layout_width="wrap_content"
@@ -249,10 +260,9 @@
             android:text="@string/edit_and_add"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/get_parameter"
-            app:layout_constraintStart_toStartOf="@id/get_parameter"
             app:layout_constraintEnd_toEndOf="@id/get_parameter"
-            />
+            app:layout_constraintStart_toStartOf="@id/get_parameter"
+            app:layout_constraintTop_toBottomOf="@id/get_parameter" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

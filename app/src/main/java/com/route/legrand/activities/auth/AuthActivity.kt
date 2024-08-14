@@ -49,4 +49,8 @@ class AuthActivity : BaseActivity<ActivityAuthBinding>() {
 
     override fun getLayout(): Int = R.layout.activity_auth
 
+    override fun onPause() {
+        super.onPause()
+        hideLoading()
+    }
 }

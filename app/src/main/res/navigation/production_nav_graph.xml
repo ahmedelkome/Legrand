@@ -10,5 +10,15 @@
         android:name="com.route.legrand.fragments.production.home.HomeProductionFragment"
         android:label="HomeProductionFragment"
         tools:layout="@layout/home_fragment_production"
+        >
+        <action
+            android:id="@+id/action_homeProductionFragment_to_injectionFragment"
+            app:destination="@id/injectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/injectionFragment"
+        android:name="com.route.legrand.fragments.production.injection.InjectionFragment"
+        android:label="InjectionFragment"
+        tools:layout="@layout/fragment_injection"
         />
 </navigation>

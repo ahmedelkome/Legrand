@@ -13,7 +13,7 @@ import com.route.legrand.models.ErrorMessage
 abstract class BaseActivity<DB : ViewDataBinding> : AppCompatActivity() {
 
     lateinit var binding: DB
-    private var dialog: AlertDialog? = null
+    open var dialog: AlertDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -51,6 +51,11 @@ abstract class BaseActivity<DB : ViewDataBinding> : AppCompatActivity() {
             }
         dialogError.create()
         dialogError.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        dialog?.dismiss()
     }
 
     abstract fun observeLiveData()

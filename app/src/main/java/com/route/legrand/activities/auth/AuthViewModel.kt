@@ -27,7 +27,6 @@ class AuthViewModel @Inject constructor(
     fun login() {
         if (!validation()) return
         viewModelScope.launch(dispatcher) {
-            loadingLiveData.postValue(true)
             authUseCase.execute(
                 UserLogin(
                     email = loginEmailLiveData.value!!,
@@ -36,11 +35,11 @@ class AuthViewModel @Inject constructor(
             ).collect {
                 when (it) {
                     is ResultWrapper.Failure -> {
-
+                        loadingLiveData.postValue(false)
                         errorLiveData.postValue(
                             ErrorMessage("Error", message = it.e.localizedMessage)
                         )
-                        loadingLiveData.postValue(false)
+
                     }
 
                     ResultWrapper.Loading -> {
@@ -48,9 +47,9 @@ class AuthViewModel @Inject constructor(
                     }
 
                     is ResultWrapper.Success -> {
-
-                        event.postValue(AuthEvents.navigateToMain)
                         loadingLiveData.postValue(false)
+                        event.postValue(AuthEvents.navigateToMain)
+
                     }
                 }
             }
