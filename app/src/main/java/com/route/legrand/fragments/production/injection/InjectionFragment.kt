@@ -6,6 +6,8 @@ import com.route.legrand.databinding.FragmentInjectionBinding
 
 
 class InjectionFragment : BaseFragment<FragmentInjectionBinding>() {
+
+
     override fun observeLiveData() {
 
     }
