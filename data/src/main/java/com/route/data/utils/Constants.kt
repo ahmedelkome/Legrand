@@ -2,4 +2,6 @@ package com.route.data.utils
 
 object Constants {
     const val ROLE = "role"
+
+    const val INJECTION_COLLECTION = "Injection Data"
 }
