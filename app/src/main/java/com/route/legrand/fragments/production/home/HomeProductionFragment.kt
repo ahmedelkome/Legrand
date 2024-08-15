@@ -18,6 +18,9 @@ class HomeProductionFragment : BaseFragment<HomeFragmentProductionBinding>() {
         binding.injectionDataBtn.setOnClickListener {
             findNavController().navigate(R.id.action_homeProductionFragment_to_injectionFragment)
         }
+        binding.oeeBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_homeProductionFragment_to_oeeFragment)
+        }
     }
 
     override fun observeLiveData() {

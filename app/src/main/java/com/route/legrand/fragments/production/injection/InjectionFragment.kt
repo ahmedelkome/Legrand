@@ -23,7 +23,6 @@ class InjectionFragment : BaseFragment<FragmentInjectionBinding>() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
         injectionViewModel.getInjectionData()
-        observeLiveData()
     }
 
     override fun observeLiveData() {

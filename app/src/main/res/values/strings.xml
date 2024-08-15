@@ -25,4 +25,25 @@
     <string name="rack_no">Rack no :</string>
     <string name="get_parameter_sheet">Get Parameter Sheet</string>
     <string name="edit_and_add">Edit and Add</string>
+    <string name="machine">Machine</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+    <string name="operator_code">Operator Code</string>
+    <string name="cavity_number">Cavity Number</string>
+    <string name="total_produced">Total Produced</string>
+    <string name="work_cav">Work Cav</string>
+    <string name="ct">CT</string>
+    <string name="e">E</string>
+    <string name="mo">MO</string>
+    <string name="h">H</string>
+    <string name="me">ME</string>
+    <string name="q">Q</string>
+    <string name="dm">DM</string>
+    <string name="co">CO</string>
+    <string name="su">SU</string>
+    <string name="cm">CM</string>
+    <string name="r">R</string>
+    <string name="wl">WL</string>
+    <string name="oth">OTH</string>
+    <string name="post">Post</string>
 </resources>

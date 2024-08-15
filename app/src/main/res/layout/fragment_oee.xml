@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_menu_of_shift"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:hint="Shift"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintHeight_percent=".08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/menu_shift"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_menu_machine"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="110dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:hint="@string/machine"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_menu_of_shift"
+            app:layout_constraintStart_toEndOf="@id/til_menu_of_shift"
+            app:layout_constraintTop_toTopOf="@id/til_menu_of_shift">
+
+            <AutoCompleteTextView
+                android:id="@+id/menu_machine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_ooe_part_menu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:hint="@string/part_number"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_menu_of_shift"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/til_menu_machine"
+            app:layout_constraintTop_toTopOf="@id/til_menu_of_shift">
+
+            <AutoCompleteTextView
+                android:id="@+id/menu_part_oee"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_select_date"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/til_menu_of_shift"
+            app:layout_constraintHeight_percent="0.06"
+            app:layout_constraintStart_toStartOf="@id/til_menu_of_shift"
+            app:layout_constraintTop_toBottomOf="@id/til_menu_of_shift">
+
+            <TextView
+                android:id="@+id/select_date_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:text="@string/select_date"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_select_time"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_select_date"
+            app:layout_constraintEnd_toEndOf="@id/til_menu_machine"
+            app:layout_constraintStart_toStartOf="@id/til_menu_machine"
+            app:layout_constraintTop_toTopOf="@id/til_select_date">
+
+            <TextView
+                android:id="@+id/select_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:text="@string/select_time"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_operator_code"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:hint="@string/operator_code"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_select_date"
+            app:layout_constraintEnd_toEndOf="@id/til_ooe_part_menu"
+            app:layout_constraintStart_toStartOf="@id/til_ooe_part_menu"
+            app:layout_constraintTop_toTopOf="@id/til_select_date">
+
+            <EditText
+                android:id="@+id/operator_code_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_cavity_number"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:hint="@string/cavity_number"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/til_select_date"
+            app:layout_constraintHeight_percent=".06"
+            app:layout_constraintStart_toStartOf="@id/til_select_date"
+            app:layout_constraintTop_toBottomOf="@id/til_select_date">
+
+            <EditText
+                android:id="@+id/cavity_number_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_total_produced"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:hint="@string/total_produced"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_cavity_number"
+            app:layout_constraintEnd_toEndOf="@id/til_select_time"
+            app:layout_constraintStart_toStartOf="@id/til_select_time"
+            app:layout_constraintTop_toTopOf="@id/til_cavity_number">
+
+            <EditText
+                android:id="@+id/total_produced_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_work_cav"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/work_cav"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_cavity_number"
+            app:layout_constraintEnd_toEndOf="@id/til_operator_code"
+            app:layout_constraintStart_toStartOf="@id/til_operator_code"
+            app:layout_constraintTop_toTopOf="@id/til_cavity_number">
+
+            <EditText
+                android:id="@+id/work_cav_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_ct"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/ct"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintHeight_percent=".06"
+            app:layout_constraintStart_toStartOf="@id/til_cavity_number"
+            app:layout_constraintTop_toBottomOf="@id/til_cavity_number"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/ct_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_E"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16sp"
+            android:hint="@string/e"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_ct"
+            app:layout_constraintStart_toEndOf="@id/til_ct"
+            app:layout_constraintTop_toTopOf="@id/til_ct"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/e_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_mo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16sp"
+            android:hint="@string/mo"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_ct"
+            app:layout_constraintStart_toEndOf="@id/til_E"
+            app:layout_constraintTop_toTopOf="@id/til_ct"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/mo_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_h"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16sp"
+            android:hint="@string/h"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_ct"
+            app:layout_constraintStart_toEndOf="@id/til_mo"
+            app:layout_constraintTop_toTopOf="@id/til_ct"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/h_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_me"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/me"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/til_ct"
+            app:layout_constraintHeight_percent=".06"
+            app:layout_constraintStart_toStartOf="@id/til_ct"
+            app:layout_constraintTop_toBottomOf="@id/til_ct"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/me_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_q"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/q"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_me"
+            app:layout_constraintEnd_toEndOf="@id/til_E"
+            app:layout_constraintStart_toStartOf="@id/til_E"
+            app:layout_constraintTop_toTopOf="@id/til_me"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/q_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_dm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/dm"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_me"
+            app:layout_constraintStart_toStartOf="@id/til_mo"
+            app:layout_constraintTop_toTopOf="@id/til_me"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/dm_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_co"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/co"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_me"
+            app:layout_constraintStart_toStartOf="@id/til_h"
+            app:layout_constraintTop_toTopOf="@id/til_me"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/co_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_su"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/su"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/til_me"
+            app:layout_constraintHeight_percent=".06"
+            app:layout_constraintStart_toStartOf="@id/til_me"
+            app:layout_constraintTop_toBottomOf="@id/til_me"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/su_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_cm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/cm"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_su"
+            app:layout_constraintStart_toStartOf="@id/til_E"
+            app:layout_constraintTop_toTopOf="@id/til_su"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/cm_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_r"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/r"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_su"
+            app:layout_constraintStart_toStartOf="@id/til_dm"
+            app:layout_constraintTop_toTopOf="@id/til_su"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/r_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_wl"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/wl"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/til_su"
+            app:layout_constraintStart_toStartOf="@id/til_co"
+            app:layout_constraintTop_toTopOf="@id/til_su"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/wl_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_oth"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/oth"
+            android:textAlignment="center"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_cm"
+            app:layout_constraintWidth_percent=".2">
+
+            <EditText
+                android:id="@+id/oth_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/post_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent=".4"
+            app:layout_constraintHeight_percent=".06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_oth"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/post"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            />
+
+        <Button
+            android:id="@+id/get_data_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent=".4"
+            app:layout_constraintHeight_percent=".06"
+            app:layout_constraintTop_toBottomOf="@id/til_oth"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/red"
+            android:text="Get Data"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

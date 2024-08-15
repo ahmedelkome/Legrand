@@ -14,11 +14,20 @@
         <action
             android:id="@+id/action_homeProductionFragment_to_injectionFragment"
             app:destination="@id/injectionFragment" />
+        <action
+            android:id="@+id/action_homeProductionFragment_to_oeeFragment"
+            app:destination="@id/oeeFragment" />
     </fragment>
     <fragment
         android:id="@+id/injectionFragment"
         android:name="com.route.legrand.fragments.production.injection.InjectionFragment"
         android:label="InjectionFragment"
         tools:layout="@layout/fragment_injection"
+        />
+    <fragment
+        android:id="@+id/oeeFragment"
+        android:name="com.route.legrand.fragments.oee.OeeFragment"
+        android:label="OeeFragment"
+        tools:layout="@layout/fragment_oee"
         />
 </navigation>
