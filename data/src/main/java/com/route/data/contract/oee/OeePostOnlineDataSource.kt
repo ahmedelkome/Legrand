@@ -5,4 +5,6 @@ import com.route.domain.models.oee.OEE
 interface OeePostOnlineDataSource {
 
     suspend fun postData(oee: OEE)
+
+    suspend fun getPartNumber():List<String>
 }

@@ -6,4 +6,6 @@ object Constants {
     const val INJECTION_COLLECTION = "Injection Data"
 
     const val OEE_COLLECTION = "OEE"
+
+    const val PARTNUMBER = "partNumber"
 }
