@@ -1,0 +1,26 @@
+package com.route.domain.models.oee
+
+data class OEE(
+    val Date: String? = null,
+    val Time: String? = null,
+    val Shift: String? = null,
+    val Machine: String? = null,
+    val OperatorCode: Int? = null,
+    val PartNumber: String? = null,
+    val cavityNumber: String? = null,
+    val TotalProduced: Int? = null,
+    val WorkCav: Int? = null,
+    val CT: Double? = null,
+    val E: Double? = null,
+    val MO: Double? = null,
+    val H: Double? = null,
+    val ME: Double? = null,
+    val Q: Double? = null,
+    val DM: Double? = null,
+    val CO: Double? = null,
+    val SU: Double? = null,
+    val CM: Double? = null,
+    val R: Double? = null,
+    val WL: Double? = null,
+    val OTH: Double? = null,
+)
