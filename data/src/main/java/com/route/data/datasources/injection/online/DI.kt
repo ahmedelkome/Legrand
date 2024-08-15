@@ -1,4 +1,4 @@
-package com.route.data.datasources.injection
+package com.route.data.datasources.injection.online
 
 import com.route.data.contract.injection.online.InjectionOnlineDataSource
 import dagger.Binds

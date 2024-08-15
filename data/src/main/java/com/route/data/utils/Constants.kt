@@ -4,4 +4,6 @@ object Constants {
     const val ROLE = "role"
 
     const val INJECTION_COLLECTION = "Injection Data"
+
+    const val OEE_COLLECTION = "OEE"
 }

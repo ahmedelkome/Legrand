@@ -17,3 +17,13 @@ suspend fun <T> toFlow(getData: suspend () -> T): Flow<ResultWrapper<T>> {
             emit(ResultWrapper.Failure(it))
         }
 }
+
+suspend fun <T> toResultWrapper(postData: suspend () -> T): ResultWrapper<T> {
+    return try {
+        ResultWrapper.Loading
+        val response = postData.invoke()
+        ResultWrapper.Success(response)
+    } catch (e: Throwable) {
+        ResultWrapper.Failure(e)
+    }
+}
