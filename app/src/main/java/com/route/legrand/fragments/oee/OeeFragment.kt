@@ -2,9 +2,11 @@ package com.route.legrand.fragments.oee
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import com.route.legrand.R
 import com.route.legrand.base.BaseFragment
 import com.route.legrand.databinding.FragmentOeeBinding
+import com.route.legrand.utils.ConstantsApp
 import com.route.legrand.utils.getHourIn12
 import com.route.legrand.utils.getTimeAmPm
 import com.route.legrand.utils.showDatePickerDialog
@@ -12,12 +14,33 @@ import com.route.legrand.utils.showTimePickerDialog
 import java.util.Calendar
 
 class OeeFragment : BaseFragment<FragmentOeeBinding>() {
+    private var adapter: ArrayAdapter<String>? = null
     private var dateCalendar = Calendar.getInstance()
     private var timeCalendar = Calendar.getInstance()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initClickDate()
         initClickTime()
+        initShiftList()
+        initMachineList()
+    }
+
+    private fun initMachineList() {
+        adapter = ArrayAdapter(
+            requireActivity(),
+            android.R.layout.simple_dropdown_item_1line,
+            ConstantsApp.listOfMachine
+        )
+        binding.menuMachine.setAdapter(adapter)
+    }
+
+    private fun initShiftList() {
+        adapter = ArrayAdapter(
+            requireActivity(),
+            android.R.layout.simple_dropdown_item_1line,
+            ConstantsApp.listOfShift
+        )
+        binding.menuShift.setAdapter(adapter)
     }
 
     private fun initClickTime() {
