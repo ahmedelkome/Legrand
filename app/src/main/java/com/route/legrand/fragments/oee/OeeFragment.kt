@@ -3,6 +3,8 @@ package com.route.legrand.fragments.oee
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import com.route.legrand.R
 import com.route.legrand.base.BaseFragment
 import com.route.legrand.databinding.FragmentOeeBinding
@@ -11,18 +13,29 @@ import com.route.legrand.utils.getHourIn12
 import com.route.legrand.utils.getTimeAmPm
 import com.route.legrand.utils.showDatePickerDialog
 import com.route.legrand.utils.showTimePickerDialog
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
 
+@AndroidEntryPoint
 class OeeFragment : BaseFragment<FragmentOeeBinding>() {
+    private val oeeViewModel: OeeViewModel by viewModels<OeeViewModel>()
     private var adapter: ArrayAdapter<String>? = null
     private var dateCalendar = Calendar.getInstance()
     private var timeCalendar = Calendar.getInstance()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.lifecycleOwner = this
+        binding.vm = oeeViewModel
         initClickDate()
         initClickTime()
         initShiftList()
         initMachineList()
+        oeeViewModel.getPartNumber()
+    }
+
+    private fun initPartNumberList(list: List<String>) {
+        adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_dropdown_item_1line, list)
+        binding.menuPartOee.setAdapter(adapter)
     }
 
     private fun initMachineList() {
@@ -90,7 +103,48 @@ class OeeFragment : BaseFragment<FragmentOeeBinding>() {
     }
 
     override fun observeLiveData() {
+        oeeViewModel.listOfPartNUmber.observe(viewLifecycleOwner) {
+            initPartNumberList(it)
+        }
+        oeeViewModel.loadingLiveData.observe(viewLifecycleOwner) {
+            if (it == true) {
+                showLoading()
+            } else {
+                hideLoading()
+            }
+        }
+        oeeViewModel.errorLiveData.observe(viewLifecycleOwner) {
+            showError(it)
+        }
+        oeeViewModel.message.observe(viewLifecycleOwner) {
+            Toast.makeText(requireActivity(), it, Toast.LENGTH_LONG).show()
+            initInitialValueToEditText()
+        }
+    }
 
+    private fun initInitialValueToEditText() {
+        oeeViewModel.partNumberLiveData.value = ""
+        oeeViewModel.shiftLiveData.value = ""
+        oeeViewModel.machineLiveData.value = ""
+        oeeViewModel.dateLiveData.value = ""
+        oeeViewModel.timeLiveData.value = ""
+        oeeViewModel.operatorLiveData.value = ""
+        oeeViewModel.cavityNumberLiveData.value = ""
+        oeeViewModel.totalProducedLiveData.value = ""
+        oeeViewModel.workCvLiveData.value = ""
+        oeeViewModel.CTLiveData.value = ""
+        oeeViewModel.MELiveData.value = ""
+        oeeViewModel.SULiveData.value = ""
+        oeeViewModel.ELiveData.value = ""
+        oeeViewModel.QLiveData.value = ""
+        oeeViewModel.CMLiveData.value = ""
+        oeeViewModel.MOLiveData.value = ""
+        oeeViewModel.DMLiveData.value = ""
+        oeeViewModel.RLiveData.value = ""
+        oeeViewModel.HLiveData.value = ""
+        oeeViewModel.COLiveData.value = ""
+        oeeViewModel.WLLiveData.value = ""
+        oeeViewModel.OTHLiveData.value = ""
     }
 
     override fun getLayout(): Int = R.layout.fragment_oee
