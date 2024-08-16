@@ -12,8 +12,8 @@ import javax.inject.Inject
 class OeeRepositoryImpl @Inject constructor(
     private val oeePostOnlineDataSource: OeePostOnlineDataSource
 ) : OeeRepository {
-    override suspend fun postData(oee: OEE): ResultWrapper<Unit> {
-        return toResultWrapper {
+    override suspend fun postData(oee: OEE): Flow<ResultWrapper<String>> {
+        return toFlow {
             oeePostOnlineDataSource.postData(oee)
         }
     }

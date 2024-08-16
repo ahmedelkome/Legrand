@@ -1,6 +1,6 @@
 package com.route.data.utils
 
-suspend fun <T> safeGetData(dataCall: suspend () -> T): T {
+suspend fun <T> safeData(dataCall: suspend () -> T): T {
     try {
         val response = dataCall.invoke()
         return response
