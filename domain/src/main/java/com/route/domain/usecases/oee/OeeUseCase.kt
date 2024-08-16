@@ -9,7 +9,7 @@ import javax.inject.Inject
 class OeeUseCase @Inject constructor(
     private val oeeRepository: OeeRepository
 ) {
-    suspend fun postData(oee: OEE): ResultWrapper<Unit> {
+    suspend fun postData(oee: OEE): Flow<ResultWrapper<String>> {
         return oeeRepository.postData(oee)
     }
 

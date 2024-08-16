@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface OeeRepository {
 
-    suspend fun postData(oee: OEE): ResultWrapper<Unit>
+    suspend fun postData(oee: OEE): Flow<ResultWrapper<String>>
 
     suspend fun getPartNumber(): Flow<ResultWrapper<List<String>>>
 }
