@@ -9,6 +9,4 @@ interface OeeRepository {
     suspend fun postData(oee: OEE): Flow<ResultWrapper<String>>
 
     suspend fun getPartNumber(): Flow<ResultWrapper<List<String>>>
-
-    suspend fun updateData(oee: OEE):Flow<ResultWrapper<String>>
 }
