@@ -50,6 +50,11 @@ dependencies {
     implementation (libs.firebase.firestore.ktx)
     kapt(libs.hilt.compiler)
 
+    // Apache POI library for Excel operations
+    implementation (libs.poi)
+    implementation (libs.poi.ooxml)
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
