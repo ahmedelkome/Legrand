@@ -23,4 +23,5 @@ data class OEE(
     val R: String? = null,
     val WL: String? = null,
     val OTH: String? = null,
+    val operation: String? = null,
 )

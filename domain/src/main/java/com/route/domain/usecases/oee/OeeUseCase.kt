@@ -16,4 +16,8 @@ class OeeUseCase @Inject constructor(
     suspend fun getPartNumber(): Flow<ResultWrapper<List<String>>> {
         return oeeRepository.getPartNumber()
     }
+
+    suspend fun updateData(oee: OEE): Flow<ResultWrapper<String>> {
+        return oeeRepository.updateData(oee)
+    }
 }
