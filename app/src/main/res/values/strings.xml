@@ -46,4 +46,5 @@
     <string name="wl">WL</string>
     <string name="oth">OTH</string>
     <string name="post">Post</string>
+    <string name="operation">operation</string>
 </resources>

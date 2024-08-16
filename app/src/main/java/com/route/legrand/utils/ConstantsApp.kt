@@ -12,6 +12,11 @@ object ConstantsApp {
     const val MAINTENANCE = "Maintenance"
     const val QUALITY = "Quality"
 
+    val listOfOperation = listOf(
+        "Edit",
+        "Add"
+    )
+
     val listOfShift = listOf("A", "B", "C")
 
     val listOfMachine = listOf(
