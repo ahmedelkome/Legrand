@@ -16,4 +16,8 @@ class OeeUseCase @Inject constructor(
     suspend fun getPartNumber(): Flow<ResultWrapper<List<String>>> {
         return oeeRepository.getPartNumber()
     }
+
+    suspend fun exportDataToExcel():Flow<ResultWrapper<List<Map<String,String>>>>{
+        return oeeRepository.exportDataToExcel()
+    }
 }
