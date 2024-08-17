@@ -17,7 +17,12 @@ object ConstantsApp {
         "Add"
     )
 
+
+
     val listOfShift = listOf("A", "B", "C")
+
+    const val REQUEST_CODE = 100
+
 
     val listOfMachine = listOf(
         "I-3",
