@@ -7,6 +7,7 @@ import com.route.domain.models.oee.OEE
 import com.route.domain.usecases.oee.OeeUseCase
 import com.route.legrand.base.BaseViewModel
 import com.route.legrand.models.ErrorMessage
+import com.route.legrand.notification.NotificationHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,7 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class OeeViewModel @Inject constructor(
-    private val oeeUseCase: OeeUseCase
+    private val oeeUseCase: OeeUseCase,
+    private val notificationHelper: NotificationHelper
 ) : BaseViewModel() {
     private val dispatcher = Dispatchers.IO
     var dateLiveData = MutableLiveData<String>()
@@ -41,6 +43,7 @@ class OeeViewModel @Inject constructor(
     var OTHLiveData = MutableLiveData<String>()
     var listOfPartNUmber = MutableLiveData<List<String>>()
     var message = MutableLiveData<String>()
+    var events = MutableLiveData<OeeEvents>()
     fun getPartNumber() {
         viewModelScope.launch(dispatcher) {
             oeeUseCase.getPartNumber().collect {
@@ -69,6 +72,7 @@ class OeeViewModel @Inject constructor(
     }
 
     fun postData() {
+
         viewModelScope.launch(dispatcher) {
             oeeUseCase.postData(
                 OEE(
@@ -115,6 +119,29 @@ class OeeViewModel @Inject constructor(
                 }
             }
 
+        }
+    }
+
+    fun exportData() {
+        viewModelScope.launch (dispatcher){
+            oeeUseCase.getFile().collect{
+                when(it){
+                    is ResultWrapper.Failure -> {
+                        loadingLiveData.postValue(false)
+                        errorLiveData.postValue(ErrorMessage(
+                            title = "Error",
+                            message = it.e.localizedMessage
+                        ))
+                    }
+                    ResultWrapper.Loading -> {
+                        loadingLiveData.postValue(true)
+                    }
+                    is ResultWrapper.Success -> {
+                        loadingLiveData.postValue(false)
+                        notificationHelper.showDownloadNotification(it.data!!)
+                    }
+                }
+            }
         }
     }
 }

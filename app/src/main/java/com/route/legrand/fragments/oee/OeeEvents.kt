@@ -1,5 +1,7 @@
 package com.route.legrand.fragments.oee
 
+import java.io.File
+
 sealed class OeeEvents {
-    data object SuccessFully : OeeEvents()
+    data class SuccessFullyExport(val file:File?) : OeeEvents()
 }

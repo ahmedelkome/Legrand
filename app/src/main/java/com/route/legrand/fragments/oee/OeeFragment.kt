@@ -1,20 +1,28 @@
 package com.route.legrand.fragments.oee
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.route.legrand.R
 import com.route.legrand.base.BaseFragment
 import com.route.legrand.databinding.FragmentOeeBinding
+import com.route.legrand.notification.NotificationHelper
 import com.route.legrand.utils.ConstantsApp
+import com.route.legrand.utils.ConstantsApp.REQUEST_CODE
 import com.route.legrand.utils.getHourIn12
 import com.route.legrand.utils.getTimeAmPm
 import com.route.legrand.utils.showDatePickerDialog
 import com.route.legrand.utils.showTimePickerDialog
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class OeeFragment : BaseFragment<FragmentOeeBinding>() {
@@ -26,6 +34,7 @@ class OeeFragment : BaseFragment<FragmentOeeBinding>() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
         binding.vm = oeeViewModel
+        checkPermissions()
         initClickDate()
         initClickTime()
         initShiftList()
@@ -132,6 +141,14 @@ class OeeFragment : BaseFragment<FragmentOeeBinding>() {
         }
     }
 
+    private fun checkPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.POST_NOTIFICATIONS), REQUEST_CODE)
+            }
+        }
+    }
+
     private fun initInitialValueToEditText() {
         oeeViewModel.partNumberLiveData.value = ""
         oeeViewModel.shiftLiveData.value = ""
@@ -156,6 +173,7 @@ class OeeFragment : BaseFragment<FragmentOeeBinding>() {
         oeeViewModel.WLLiveData.value = ""
         oeeViewModel.OTHLiveData.value = ""
     }
+
 
     override fun getLayout(): Int = R.layout.fragment_oee
 }
