@@ -4,6 +4,7 @@ import com.route.domain.common.ResultWrapper
 import com.route.domain.models.oee.OEE
 import com.route.domain.repos.oee.OeeRepository
 import kotlinx.coroutines.flow.Flow
+import java.io.File
 import javax.inject.Inject
 
 class OeeUseCase @Inject constructor(
@@ -17,7 +18,8 @@ class OeeUseCase @Inject constructor(
         return oeeRepository.getPartNumber()
     }
 
-    suspend fun exportDataToExcel():Flow<ResultWrapper<List<Map<String,String>>>>{
+    suspend fun getFile(): Flow<ResultWrapper<File?>> {
         return oeeRepository.exportDataToExcel()
     }
+
 }
