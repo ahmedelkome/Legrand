@@ -12,4 +12,6 @@ interface OeeRepository {
     suspend fun getPartNumber(): Flow<ResultWrapper<List<String>>>
 
     suspend fun exportDataToExcel(): Flow<ResultWrapper<File?>>
+
+    suspend fun editData(): Flow<ResultWrapper<String>>
 }

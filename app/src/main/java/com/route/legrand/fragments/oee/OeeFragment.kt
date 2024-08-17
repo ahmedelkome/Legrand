@@ -39,19 +39,8 @@ class OeeFragment : BaseFragment<FragmentOeeBinding>() {
         initClickTime()
         initShiftList()
         initMachineList()
-        initOperationList()
         oeeViewModel.getPartNumber()
     }
-
-    private fun initOperationList() {
-        adapter = ArrayAdapter(
-            requireActivity(),
-            android.R.layout.simple_dropdown_item_1line,
-            ConstantsApp.listOfOperation
-        )
-        binding.operationMenu.setAdapter(adapter)
-    }
-
     private fun initPartNumberList(list: List<String>) {
         adapter = ArrayAdapter(requireActivity(), android.R.layout.simple_dropdown_item_1line, list)
         binding.menuPartOee.setAdapter(adapter)
