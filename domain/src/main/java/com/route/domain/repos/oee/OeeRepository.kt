@@ -13,5 +13,5 @@ interface OeeRepository {
 
     suspend fun exportDataToExcel(): Flow<ResultWrapper<File?>>
 
-    suspend fun editData(): Flow<ResultWrapper<String>>
+    suspend fun editData(oee: OEE): Flow<ResultWrapper<String>>
 }

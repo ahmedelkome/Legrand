@@ -22,8 +22,8 @@ class OeeUseCase @Inject constructor(
         return oeeRepository.exportDataToExcel()
     }
 
-    suspend fun editData(): Flow<ResultWrapper<String>> {
-        return oeeRepository.editData()
+    suspend fun editData(oee: OEE): Flow<ResultWrapper<String>> {
+        return oeeRepository.editData(oee)
     }
 
 }
