@@ -10,14 +10,19 @@ import org.apache.poi.ss.usermodel.Workbook
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.File
 import java.io.FileOutputStream
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import javax.inject.Inject
 
 class ExcelExporterImpl @Inject constructor(
     private val context: Context
-): ExcelExporter {
+) : ExcelExporter {
     override suspend fun exportDataToExcel(data: List<Map<String, Any>>): File? {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val currentDate = dateFormat.format(Date())
         val workbook: Workbook = XSSFWorkbook()
-        val sheet = workbook.createSheet("OEE Sheet")
+        val sheet = workbook.createSheet("OEE Sheet $currentDate")
 
         if (data.isEmpty()) {
             Log.d("ExcelExporter", "No data to export")
@@ -39,9 +44,15 @@ class ExcelExporterImpl @Inject constructor(
             }
         }
 
-        val fileName = "OEE.xlsx"
+
+        val fileName = "OEE_$currentDate.xlsx"
         val downloadDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
         val file = File(downloadDir, fileName)
+
+        // If the file already exists, delete it
+        if (file.exists()) {
+            file.delete()
+        }
         val outputStream = FileOutputStream(file)
         workbook.write(outputStream)
         outputStream.close()
