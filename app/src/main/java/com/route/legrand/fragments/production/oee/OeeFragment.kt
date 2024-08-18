@@ -1,4 +1,4 @@
-package com.route.legrand.fragments.oee
+package com.route.legrand.fragments.production.oee
 
 import android.Manifest
 import android.content.pm.PackageManager

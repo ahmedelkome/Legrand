@@ -6,7 +6,7 @@
 
         <variable
             name="vm"
-            type="com.route.legrand.fragments.oee.OeeViewModel" />
+            type="com.route.legrand.fragments.production.oee.OeeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
