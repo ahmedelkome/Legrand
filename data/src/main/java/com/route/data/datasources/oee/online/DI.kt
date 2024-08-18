@@ -1,6 +1,6 @@
 package com.route.data.datasources.oee.online
 
-import com.route.data.contract.oee.OeePostOnlineDataSource
+import com.route.data.contract.oee.OeeOnlineDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -12,6 +12,6 @@ abstract class DI {
 
     @Binds
     abstract fun bindOeePostOnlineDataSource(
-        oeePostOnlineDataSourceImpl: OeePostOnlineDataSourceImpl
-    ): OeePostOnlineDataSource
+        oeePostOnlineDataSourceImpl: OeeOnlineDataSourceImpl
+    ): OeeOnlineDataSource
 }

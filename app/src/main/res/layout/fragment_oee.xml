@@ -531,17 +531,17 @@
             android:id="@+id/til_oth"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
             android:hint="@string/oth"
             android:textAlignment="center"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
             app:hintTextColor="@color/black"
-            android:layout_marginStart="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".07"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="50dp"
             app:layout_constraintTop_toBottomOf="@id/til_cm"
             app:layout_constraintWidth_percent=".2">
 
@@ -553,6 +553,7 @@
                 android:text="@={vm.OTHLiveData}"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/post_btn"
             android:layout_width="0dp"
@@ -576,9 +577,9 @@
             android:layout_marginTop="50dp"
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/red"
+            android:onClick="@{()->vm.exportData()}"
             android:text="@string/get_data"
             android:textSize="20sp"
-            android:onClick="@{()->vm.exportData()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".06"
             app:layout_constraintTop_toBottomOf="@id/til_oth"
@@ -588,15 +589,15 @@
             android:id="@+id/edit_btn"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/post_btn"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp"
-            app:layout_constraintHeight_percent=".06"
-            app:layout_constraintWidth_percent=".4"
             android:backgroundTint="@color/red"
+            android:onClick="@{()->vm.editData()}"
             android:text="@string/edit"
             android:textSize="20sp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_btn"
+            app:layout_constraintWidth_percent=".4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
