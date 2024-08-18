@@ -13,7 +13,6 @@ import androidx.fragment.app.viewModels
 import com.route.legrand.R
 import com.route.legrand.base.BaseFragment
 import com.route.legrand.databinding.FragmentOeeBinding
-import com.route.legrand.notification.NotificationHelper
 import com.route.legrand.utils.ConstantsApp
 import com.route.legrand.utils.ConstantsApp.REQUEST_CODE
 import com.route.legrand.utils.getHourIn12
@@ -22,7 +21,6 @@ import com.route.legrand.utils.showDatePickerDialog
 import com.route.legrand.utils.showTimePickerDialog
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class OeeFragment : BaseFragment<FragmentOeeBinding>() {
@@ -124,7 +122,11 @@ class OeeFragment : BaseFragment<FragmentOeeBinding>() {
         oeeViewModel.errorLiveData.observe(viewLifecycleOwner) {
             showError(it)
         }
-        oeeViewModel.message.observe(viewLifecycleOwner) {
+        oeeViewModel.messageAdded.observe(viewLifecycleOwner) {
+            Toast.makeText(requireActivity(), it, Toast.LENGTH_LONG).show()
+            initInitialValueToEditText()
+        }
+        oeeViewModel.messageEdited.observe(viewLifecycleOwner){
             Toast.makeText(requireActivity(), it, Toast.LENGTH_LONG).show()
             initInitialValueToEditText()
         }
