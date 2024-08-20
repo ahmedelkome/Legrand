@@ -49,4 +49,22 @@
     <string name="operation">operation</string>
     <string name="get_data">Get Data</string>
     <string name="edit">Edit</string>
+    <string name="sink_mark">Sink Mark</string>
+    <string name="excessive_flash">Excessive Flash</string>
+    <string name="short_shot">Short Shot</string>
+    <string name="part_stuck">Part Stuck</string>
+    <string name="runner_stuck">Runner Stuck</string>
+    <string name="black_spots_brown_streaks">Black spots, Brown streaks</string>
+    <string name="brittleness_cracking_crazing">Brittleness / Cracking/ crazing</string>
+    <string name="blisters">Blisters</string>
+    <string name="burn_marks">Burn Marks</string>
+    <string name="discoloration">Discoloration</string>
+    <string name="flow_mark">Flow Mark</string>
+    <string name="poor_surface_finish_gloss">Poor Surface Finish (Gloss)</string>
+    <string name="poor_weld_lines">Poor Weld Lines</string>
+    <string name="silver_streaks_splay_splash">Silver Streaks, Splay, Splash</string>
+    <string name="warping">Warping</string>
+    <string name="over_sized_part_out_of_specs_master_sample">Over Sized Part /out of specs > master sample</string>
+    <string name="voids_bubbles">Voids, Bubbles</string>
+    <string name="method">Method</string>
 </resources>

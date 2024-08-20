@@ -14,7 +14,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/off_white"
         tools:context=".activities.auth.AuthActivity">
 
         <ImageView
@@ -40,6 +40,7 @@
             app:boxStrokeColor="@color/black"
             app:errorTextColor="@color/red"
             app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".09"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +50,8 @@
                 android:id="@+id/edit_mail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:text="@={vm.loginEmailLiveData}" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,6 +65,7 @@
             android:layout_marginTop="30dp"
             android:hint="Enter Your Password"
             app:boxStrokeColor="@color/black"
+            android:textColorHint="@color/black"
             app:errorTextColor="@color/red"
             app:hintTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,6 +77,8 @@
                 android:id="@+id/edit_pass"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:text="@={vm.loginPasswordLiveDate}" />
         </com.google.android.material.textfield.TextInputLayout>
 

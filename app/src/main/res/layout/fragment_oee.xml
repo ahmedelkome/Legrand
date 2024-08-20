@@ -11,7 +11,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/off_white"
+        >
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_menu_of_shift"
@@ -26,7 +28,7 @@
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
             app:hintTextColor="@color/black"
-            app:layout_constraintHeight_percent=".07"
+            app:layout_constraintHeight_percent=".09"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -34,6 +36,8 @@
                 android:id="@+id/menu_shift"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:text="@={vm.shiftLiveData}" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -57,6 +61,8 @@
                 android:id="@+id/menu_machine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:text="@={vm.machineLiveData}" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,6 +85,8 @@
                 android:id="@+id/menu_part_oee"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:text="@={vm.partNumberLiveData}" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,8 +114,9 @@
                 android:gravity="center"
                 android:hint="@string/select_date"
                 android:text="@={vm.dateLiveData}"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColor="@color/off_white"
+                android:textStyle="bold"
+                android:textColorHint="@color/off_white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -132,8 +141,9 @@
                 android:gravity="center"
                 android:hint="@string/select_time"
                 android:text="@={vm.timeLiveData}"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColor="@color/off_white"
+                android:textStyle="bold"
+                android:textColorHint="@color/off_white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -157,7 +167,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.operatorLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -182,7 +193,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.cavityNumberLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -206,7 +218,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.totalProducedLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -229,7 +242,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.workCvLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -253,7 +267,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.CTLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -277,7 +292,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.ELiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -301,7 +317,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.MOLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -326,7 +343,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.HLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -352,7 +370,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.MELiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -377,7 +396,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.QLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -401,7 +421,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.DMLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -425,7 +446,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.COLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -451,7 +473,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.SULiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -475,7 +498,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.CMLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -499,7 +523,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.RLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -523,7 +548,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.WLLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -551,7 +577,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@={vm.OTHLiveData}"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -564,6 +591,7 @@
             android:onClick="@{()->vm.postData()}"
             android:text="@string/post"
             android:textSize="20sp"
+            android:textColor="@color/white"
             app:layout_constraintHeight_percent=".06"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/til_oth"
@@ -578,6 +606,7 @@
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/red"
             android:onClick="@{()->vm.exportData()}"
+            android:textColor="@color/white"
             android:text="@string/get_data"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -594,6 +623,7 @@
             android:onClick="@{()->vm.editData()}"
             android:text="@string/edit"
             android:textSize="20sp"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".06"
             app:layout_constraintStart_toStartOf="parent"
