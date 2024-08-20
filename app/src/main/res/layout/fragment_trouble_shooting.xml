@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.route.legrand.fragments.production.troubleshooting.TroubleViewModel" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/off_white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/off_white">
+
+
+            <Button
+                android:id="@+id/sink_mark_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="70dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.sinkMark()}"
+                android:textColor="@color/white"
+                android:text="@string/sink_mark"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4" />
+
+            <Button
+                android:id="@+id/excessive_flash_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.excessiveFlash()}"
+                android:text="@string/excessive_flash"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/sink_mark_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintTop_toTopOf="@id/sink_mark_btn"
+                app:layout_constraintWidth_percent=".4" />
+
+            <Button
+                android:id="@+id/short_shot_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.shortShot()}"
+                android:text="@string/short_shot"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/sink_mark_btn"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintStart_toStartOf="@id/sink_mark_btn"
+                app:layout_constraintTop_toBottomOf="@id/sink_mark_btn"
+                app:layout_constraintWidth_percent=".4" />
+
+            <Button
+                android:id="@+id/part_stuck_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.partStuck()}"
+                android:text="@string/part_stuck"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/short_shot_btn"
+                app:layout_constraintEnd_toEndOf="@id/excessive_flash_btn"
+                app:layout_constraintStart_toStartOf="@id/excessive_flash_btn"
+                app:layout_constraintTop_toTopOf="@id/short_shot_btn" />
+
+            <Button
+                android:id="@+id/runner_stuck_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.runnerStuck()}"
+                android:text="@string/runner_stuck"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/sink_mark_btn"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintStart_toStartOf="@id/sink_mark_btn"
+                app:layout_constraintTop_toBottomOf="@id/short_shot_btn"
+                app:layout_constraintWidth_percent=".4" />
+
+            <Button
+                android:id="@+id/black_spots_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.blackSpots()}"
+                android:textColor="@color/white"
+                android:text="@string/black_spots_brown_streaks"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/runner_stuck_btn"
+                app:layout_constraintEnd_toEndOf="@id/excessive_flash_btn"
+                app:layout_constraintStart_toStartOf="@id/excessive_flash_btn"
+                app:layout_constraintTop_toTopOf="@id/runner_stuck_btn" />
+
+            <Button
+                android:id="@+id/cracking_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.cracking()}"
+                android:text="@string/brittleness_cracking_crazing"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/sink_mark_btn"
+                app:layout_constraintHeight_percent=".09"
+                app:layout_constraintStart_toStartOf="@id/sink_mark_btn"
+                app:layout_constraintTop_toBottomOf="@id/runner_stuck_btn" />
+
+            <Button
+                android:id="@+id/blisters_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.blisters()}"
+                android:text="@string/blisters"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/cracking_btn"
+                app:layout_constraintEnd_toEndOf="@id/excessive_flash_btn"
+                app:layout_constraintStart_toStartOf="@id/excessive_flash_btn"
+                app:layout_constraintTop_toTopOf="@id/cracking_btn" />
+
+            <Button
+                android:id="@+id/burn_marks_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.burnMarks()}"
+                android:text="@string/burn_marks"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/sink_mark_btn"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintStart_toStartOf="@id/sink_mark_btn"
+                app:layout_constraintTop_toBottomOf="@id/cracking_btn" />
+
+            <Button
+                android:id="@+id/discoloration_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.discoloration()}"
+                android:text="@string/discoloration"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/burn_marks_btn"
+                app:layout_constraintEnd_toEndOf="@id/excessive_flash_btn"
+                app:layout_constraintStart_toStartOf="@id/excessive_flash_btn"
+                app:layout_constraintTop_toTopOf="@id/burn_marks_btn" />
+
+            <Button
+                android:id="@+id/flow_mark_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.flowMark()}"
+                android:text="@string/flow_mark"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/sink_mark_btn"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintStart_toStartOf="@id/sink_mark_btn"
+                app:layout_constraintTop_toBottomOf="@id/burn_marks_btn" />
+
+            <Button
+                android:id="@+id/poor_surface_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.poorSurface()}"
+                android:text="@string/poor_surface_finish_gloss"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/flow_mark_btn"
+                app:layout_constraintEnd_toEndOf="@id/excessive_flash_btn"
+                app:layout_constraintStart_toStartOf="@id/excessive_flash_btn"
+                app:layout_constraintTop_toTopOf="@id/flow_mark_btn" />
+
+            <Button
+                android:id="@+id/poor_weld_lines_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.poorWeld()}"
+                android:text="@string/poor_weld_lines"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/sink_mark_btn"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintStart_toStartOf="@id/sink_mark_btn"
+                app:layout_constraintTop_toBottomOf="@id/flow_mark_btn" />
+
+            <Button
+                android:id="@+id/silver_streaks_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.silverStreaks()}"
+                android:text="@string/silver_streaks_splay_splash"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@id/poor_weld_lines_btn"
+                app:layout_constraintEnd_toEndOf="@id/excessive_flash_btn"
+                app:layout_constraintStart_toStartOf="@id/excessive_flash_btn"
+                app:layout_constraintTop_toTopOf="@id/poor_weld_lines_btn" />
+
+            <Button
+                android:id="@+id/warping_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.warping()}"
+                android:textColor="@color/white"
+                android:text="@string/warping"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/sink_mark_btn"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintStart_toStartOf="@id/sink_mark_btn"
+                app:layout_constraintTop_toBottomOf="@id/poor_weld_lines_btn" />
+
+            <Button
+                android:id="@+id/voids_bubbles_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.voidsBubbles()}"
+                android:textColor="@color/white"
+                android:text="@string/voids_bubbles"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/warping_btn"
+                app:layout_constraintEnd_toEndOf="@id/excessive_flash_btn"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintStart_toStartOf="@id/excessive_flash_btn"
+                app:layout_constraintTop_toTopOf="@id/warping_btn" />
+
+            <Button
+                android:id="@+id/over_btn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/red"
+                android:onClick="@{()->vm.overSized()}"
+                android:text="@string/over_sized_part_out_of_specs_master_sample"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/excessive_flash_btn"
+                app:layout_constraintHeight_percent=".08"
+                app:layout_constraintStart_toStartOf="@id/sink_mark_btn"
+                app:layout_constraintTop_toBottomOf="@id/warping_btn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
