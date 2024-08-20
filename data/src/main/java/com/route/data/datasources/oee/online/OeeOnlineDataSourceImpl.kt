@@ -43,7 +43,9 @@ class OeeOnlineDataSourceImpl @Inject constructor(
         return safeData {
             val docs = firestore.collection(Constants.OEE_COLLECTION).get().await()
             for (list in docs) {
-                resultOfExcel.add(list.data)
+                if (!resultOfExcel.contains(list.data)) {
+                    resultOfExcel.add(list.data)
+                }
             }
             resultOfExcel
         }
