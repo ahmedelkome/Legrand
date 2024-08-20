@@ -4,11 +4,14 @@ import android.content.Context
 import android.os.Environment
 import android.util.Log
 import com.route.data.excel.contract.ExcelExporter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.ss.usermodel.Workbook
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.File
+import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -19,7 +22,7 @@ class ExcelExporterImpl @Inject constructor(
     private val context: Context
 ) : ExcelExporter {
     override suspend fun exportDataToExcel(data: List<Map<String, Any>>): File? {
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd - HH-mm-ss", Locale.getDefault())
         val currentDate = dateFormat.format(Date())
         val workbook: Workbook = XSSFWorkbook()
         val sheet = workbook.createSheet("OEE Sheet $currentDate")
