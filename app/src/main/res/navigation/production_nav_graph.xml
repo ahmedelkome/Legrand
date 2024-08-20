@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_homeProductionFragment_to_oeeFragment"
             app:destination="@id/oeeFragment" />
+        <action
+            android:id="@+id/action_homeProductionFragment_to_troubleShootingFragment"
+            app:destination="@id/troubleShootingFragment" />
     </fragment>
     <fragment
         android:id="@+id/injectionFragment"
@@ -30,4 +33,8 @@
         android:label="OeeFragment"
         tools:layout="@layout/fragment_oee"
         />
+    <fragment
+        android:id="@+id/troubleShootingFragment"
+        android:name="com.route.legrand.fragments.production.troubleshooting.TroubleShootingFragment"
+        android:label="TroubleShootingFragment" />
 </navigation>

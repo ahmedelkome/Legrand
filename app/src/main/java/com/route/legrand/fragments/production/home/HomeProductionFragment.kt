@@ -21,6 +21,9 @@ class HomeProductionFragment : BaseFragment<HomeFragmentProductionBinding>() {
         binding.oeeBtn.setOnClickListener {
             findNavController().navigate(R.id.action_homeProductionFragment_to_oeeFragment)
         }
+        binding.troubleShootingBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_homeProductionFragment_to_troubleShootingFragment)
+        }
     }
 
     override fun observeLiveData() {
