@@ -16,7 +16,7 @@ object ConstantsApp {
 
     const val REQUEST_CODE = 100
 
-    private const val REQUEST_STORAGE_PERMISSION = 1
+     const val ISSUE_NAME = "issue_name"
 
 
 
