@@ -6,6 +6,7 @@ import com.route.domain.models.injection.InjectionData
 import com.route.domain.repos.injection.InjectionRepository
 import com.route.domain.utils.toFlow
 import kotlinx.coroutines.flow.Flow
+import java.io.File
 import javax.inject.Inject
 
 class InjectionRepositoryImpl @Inject constructor(
@@ -14,6 +15,12 @@ class InjectionRepositoryImpl @Inject constructor(
     override suspend fun getInjectionData(): Flow<ResultWrapper<List<InjectionData>>> {
         return toFlow {
             injectionOnlineDataSource.getInjectionData()
+        }
+    }
+
+    override suspend fun getParameterSheet(partNumber: String): Flow<ResultWrapper<File?>> {
+        return toFlow {
+            injectionOnlineDataSource.getParameterSheet(partNumber)
         }
     }
 }
