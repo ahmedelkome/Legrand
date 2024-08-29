@@ -2,11 +2,13 @@ package com.route.legrand.fragments.production.injection
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.route.data.utils.shared.SharedPreferenceHelper
 import com.route.domain.common.ResultWrapper
 import com.route.domain.models.injection.InjectionData
 import com.route.domain.usecases.injection.InjectionUseCase
 import com.route.legrand.base.BaseViewModel
 import com.route.legrand.models.ErrorMessage
+import com.route.legrand.notification.NotificationHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,10 +16,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class InjectionViewModel @Inject constructor(
-    private val injectionUseCase: InjectionUseCase
+    private val injectionUseCase: InjectionUseCase,
+    private val notificationHelper: NotificationHelper
 ) : BaseViewModel() {
     var listOfInjectionData = MutableLiveData<List<InjectionData>>()
     private val dispatcher = Dispatchers.IO
+    var partNumber = MutableLiveData("")
 
     fun getInjectionData() {
         viewModelScope.launch(dispatcher) {
@@ -42,6 +46,33 @@ class InjectionViewModel @Inject constructor(
                     is ResultWrapper.Success -> {
 
                         listOfInjectionData.postValue(it.data)
+                        loadingLiveData.postValue(false)
+                    }
+                }
+            }
+        }
+    }
+
+    fun getParameterSheet() {
+        viewModelScope.launch(dispatcher) {
+            injectionUseCase.getParameterSheet(partNumber.value!!).collect {
+                when (it) {
+                    is ResultWrapper.Failure -> {
+                        errorLiveData.postValue(
+                            ErrorMessage(
+                                title = "Error",
+                                message = "This partnumber not have Parametersheet"
+                            )
+                        )
+                        loadingLiveData.postValue(false)
+                    }
+
+                    ResultWrapper.Loading -> {
+                        loadingLiveData.postValue(true)
+                    }
+
+                    is ResultWrapper.Success -> {
+                        notificationHelper.showDownloadNotification(it.data!!)
                         loadingLiveData.postValue(false)
                     }
                 }
