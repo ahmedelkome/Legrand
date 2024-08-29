@@ -41,8 +41,9 @@ class NotificationHelper(private val context: Context) {
         createNotificationChannel()
         // Create an Intent to open the file
         val fileUri = FileProvider.getUriForFile(context, "com.route.legrand.fileprovider", newFile)
+        val mimeType = if (newFile.extension == "pdf") "application/pdf" else "application/vnd.ms-excel"
         val fileIntent = Intent(Intent.ACTION_VIEW).apply {
-            setDataAndType(fileUri, "application/vnd.ms-excel")
+            setDataAndType(fileUri, mimeType)
             flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
         }
 
