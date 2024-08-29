@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+
     <application
         android:name=".myapp.MyApplication"
         android:allowBackup="true"
@@ -32,13 +35,7 @@
 
         <activity
             android:name=".activities.main.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".activities.auth.AuthActivity"
             android:exported="false" />
@@ -53,6 +50,9 @@
         </activity>
         <activity
             android:name=".activities.home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.production.troubleshooting.details.DetailsActivity"
             android:exported="false" />
     </application>
 
